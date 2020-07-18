@@ -32,7 +32,9 @@ Project boilerplate: <https://github.com/freeCodeCamp/boilerplate-project-librar
 
 <https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching>
 
-<https://helmetjs.github.io/docs/nocache/> Dice que ya no se va a incluir en una futura versión de helmet. ¿Cómo requerir que no se use el cache del cliente?
+<https://helmetjs.github.io/docs/nocache/> Dice que ya no se va a incluir en una futura versión de helmet.
+
+<https://github.com/helmetjs/helmet/issues/215>
 
 <https://stackoverflow.com/questions/20429592/no-cache-in-node-js-server/30453242#30453242> 
 
@@ -53,3 +55,9 @@ app.use(nocache());
 This disables browser caching.
 
 </quote>
+
+## dotenv
+
+Paquete para utilizar variables de entorno almacenadas en .env
+
+<https://www.npmjs.com/package/dotenv>

@@ -5,16 +5,19 @@ const bodyParser  = require('body-parser');
 const cors        = require('cors');
 
 const helmet      = require('helmet');
+const noCache     = require('nocache');
 
 const apiRoutes         = require('./routes/api.js');
 const fccTestingRoutes  = require('./routes/fcctesting.js');
 const runner            = require('./test-runner');
 
+require('dotenv').config();
+
 const app = express();
 
 app.use(helmet());
-app.use(helmet.noCache());
 app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0'}));
+app.use(noCache());
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
