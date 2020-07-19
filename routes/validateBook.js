@@ -3,7 +3,12 @@
 const { check, validationResult } = require('express-validator');
 
 exports.validateBook = [
-	check('title').isAlphanumeric().isLength({min: 2,max: 50}),
+	check('title')
+		.isAlphanumeric()
+		.not().isEmpty()
+		.isLength({min: 2,max: 50})
+    	.trim()
+    	.escape(),
 	(req, res, next) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
