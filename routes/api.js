@@ -8,22 +8,25 @@
 
 'use strict';
 
-
 module.exports = function (app) {
 
   app.route('/api/books')
-    .get(function (req, res){
-      //response will be array of book objects
-      //json res format: [{"_id": bookid, "title": book_title, "commentcount": num_of_comments },...]
+    .get(function(req, res){
+        //response will be array of book objects
+        //json res format: [{"_id": bookid, "title": book_title, "commentcount": num_of_comments },...]
 
-      //stub
-      const books = [{"_id": "bookid", "title": "book_title", "commentcount": 0 }];
-      res.json(books);
+        //stub
+        const books = [{"_id": "bookid", "title": "book_title", "commentcount": 0 }];
+        res.json(books);
     })
     
     .post(function (req, res){
       const title = req.body.title;
       //response will contain new book object including atleast _id and title
+
+      //stub
+      const book = { '_id': '0123456789', title};
+      res.json(book);
     })
     
     .delete(function(req, res){
