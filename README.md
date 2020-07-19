@@ -74,5 +74,6 @@ https://dev.to/nedsoft/a-clean-approach-to-using-express-validator-8go
 
 ## About input sanitization:
 
+https://express-validator.github.io/docs/sanitization.html
 
-//
+https://flaviocopes.com/express-sanitize-input/
