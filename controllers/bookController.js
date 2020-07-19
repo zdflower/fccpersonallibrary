@@ -1,5 +1,6 @@
 // const Book = require('../models/book');
 
+
 exports.getAllBooks = function (req, res) {
   	//response will be array of book objects
     //json res format: [{"_id": bookid, "title": book_title, "commentcount": num_of_comments },...]
@@ -10,12 +11,21 @@ exports.getAllBooks = function (req, res) {
 }
 
 exports.postNewBook = function (req, res){
+	console.log("postNewBook");
+	console.log(req.body);
+
+try{
     const title = req.body.title;
     //response will contain new book object including atleast _id and title
 
     //stub
     const book = { '_id': '0123456789', title};
+
     res.json(book);
+	
+	} catch(err){
+		res.send(err);
+	}
 }
 
 exports.deleteAllBooks = function (req, res){

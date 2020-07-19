@@ -8,6 +8,10 @@
 
 'use strict';
 
+
+
+const { validateBook } = require('./validateBook');
+
 const bookController = require('../controllers/bookController');
 
 module.exports = function (app) {
@@ -15,7 +19,7 @@ module.exports = function (app) {
   app.route('/api/books')
     .get(bookController.getAllBooks)
     
-    .post(bookController.postNewBook)
+    .post(validateBook, bookController.postNewBook)
     
     .delete(bookController.deleteAllBooks);
 

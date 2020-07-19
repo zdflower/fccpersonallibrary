@@ -61,3 +61,18 @@ This disables browser caching.
 Paquete para utilizar variables de entorno almacenadas en .env
 
 <https://www.npmjs.com/package/dotenv>
+
+## About input validation: 
+
+https://express-validator.github.io/docs/
+
+https://flaviocopes.com/express-validate-input/
+
+https://dev.to/nedsoft/a-clean-approach-to-using-express-validator-8go
+
+[How to implement validation in a separate file using express-validator](https://stackoverflow.com/a/61268141)
+
+## About input sanitization:
+
+
+//
