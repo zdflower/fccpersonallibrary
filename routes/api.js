@@ -8,7 +8,6 @@
 
 'use strict';
 
-const MONGODB_CONNECTION_STRING = process.env.DB;
 
 module.exports = function (app) {
 
@@ -16,10 +15,14 @@ module.exports = function (app) {
     .get(function (req, res){
       //response will be array of book objects
       //json res format: [{"_id": bookid, "title": book_title, "commentcount": num_of_comments },...]
+
+      //stub
+      const books = [{"_id": "bookid", "title": "book_title", "commentcount": 0 }];
+      res.json(books);
     })
     
     .post(function (req, res){
-      var title = req.body.title;
+      const title = req.body.title;
       //response will contain new book object including atleast _id and title
     })
     
