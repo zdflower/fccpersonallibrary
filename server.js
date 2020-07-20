@@ -13,7 +13,7 @@ const runner            = require('./test-runner');
 
 require('dotenv').config();
 
-require('./helpers/dbconnect');
+require('./dbconnect');
 
 const app = express();
 
