@@ -82,6 +82,8 @@ https://flaviocopes.com/express-sanitize-input/
 
 https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/
 
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose
+
 https://mongoosejs.com/docs/index.html
 
 https://mongoosejs.com/docs/connections.html#error-handling
