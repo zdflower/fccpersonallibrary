@@ -77,3 +77,14 @@ https://dev.to/nedsoft/a-clean-approach-to-using-express-validator-8go
 https://express-validator.github.io/docs/sanitization.html
 
 https://flaviocopes.com/express-sanitize-input/
+
+## Mongoose
+
+https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/
+
+https://mongoosejs.com/docs/index.html
+
+https://mongoosejs.com/docs/connections.html#error-handling
+
+[Mongoose Connecting to MongoDB](https://www.youtube.com/watch?v=JLwwQMU6Ru0)
+

@@ -13,6 +13,8 @@ const runner            = require('./test-runner');
 
 require('dotenv').config();
 
+require('./helpers/dbconnect');
+
 const app = express();
 
 app.use(helmet());
