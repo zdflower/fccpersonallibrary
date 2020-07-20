@@ -90,3 +90,26 @@ https://mongoosejs.com/docs/connections.html#error-handling
 
 [Mongoose Connecting to MongoDB](https://www.youtube.com/watch?v=JLwwQMU6Ru0)
 
+## Respuesta al intento de crear un nuevo libro sin proveer título
+
+En la app de ejemplo de freecodecamp, en este caso, devuelve "missing title" como texto en el cuerpo de la respuesta.
+
+En mi app devuelve un array de errores que vienen del validator.
+
+## Respuesta al post correcto de un nuevo libro
+
+En la app de ejemplo de freecodecamp devuelven algo como 
+
+    {"title":"La Ilíada","comments":[],"_id":"5f161aa3000e7d0073795d77"}
+
+En mi app: 
+
+    {
+    "__v": 0,
+    "_id": "5f161dbf6f31dc092f9f2b85",
+    "comment_count": 0,
+    "comments": [],
+    "title": "La Ilíada"
+    }
+
+Tal vez tendría que procesar la respuesta de la base de datos y sólo devolver \_id, comments y title.
