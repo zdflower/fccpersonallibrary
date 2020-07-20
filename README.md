@@ -12,6 +12,8 @@ Project Personal Library
 
 
 Project boilerplate: <https://github.com/freeCodeCamp/boilerplate-project-library/>
+Example app from FCC: <https://fuzzy-mink.glitch.me/>
+
 
 # User stories:
 
@@ -113,3 +115,22 @@ En mi app:
     }
 
 Tal vez tendría que procesar la respuesta de la base de datos y sólo devolver \_id, comments y title.
+
+
+## Respuesta a id inválida y de un id no existente para ver un libro (GET /api/books/{\_id})
+
+En la app de freecodecamp: 
+
+    Not found
+
+## Respuesta a id inválida para crear un nuevo comentario
+
+En la app de freecodecamp: 
+
+    Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+
+## Respuesta a un id que no existe para crear un nuevo comentario
+
+En la app de freecodecamp:
+
+    null
