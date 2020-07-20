@@ -4,7 +4,6 @@ const { check, validationResult } = require('express-validator');
 
 exports.validateBook = [
 	check('title')
-		.isAlphanumeric()
 		.not().isEmpty()
 		.isLength({min: 2,max: 50})
     	.trim()

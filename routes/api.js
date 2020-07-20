@@ -19,7 +19,8 @@ module.exports = function (app) {
   app.route('/api/books')
     .get(bookController.getAllBooks)
     
-    .post(validateBook, bookController.postNewBook)
+    .post(validateBook, bookController.postNewBook) // "Gerda malaperis" me da error según validateBook, no debería. Debo haber hecho mal la selección de validators.
+    // Me parece que .isAlphanumeric daba error porque el título contenía un espacio que no es alfanumérico.
     
     .delete(bookController.deleteAllBooks);
 
