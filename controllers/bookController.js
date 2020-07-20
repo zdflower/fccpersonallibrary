@@ -28,7 +28,9 @@ exports.postNewBook = function (req, res){
 
 exports.deleteAllBooks = function (req, res){
 	//if successful response will be 'complete delete successful'
-	res.send('NO IMPLEMENTADO AÚN: DELETE todos los libros');
+	Book.deleteMany({})
+	.then( () => res.send('complete delete successful'))
+	.catch(err => res.send(error.message));
 }
 
 exports.getBook = function (req, res){
