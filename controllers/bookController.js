@@ -5,20 +5,19 @@ exports.getAllBooks = function (req, res) {
   	//response will be array of book objects
     //json res format: [{"_id": bookid, "title": book_title, "commentcount": num_of_comments },...]
 
-    //stub
+    /* stub
     const books = [{"_id": "1234", "title": "book_title", "commentcount": 1, "comments": ["It's Ok"] }];
     res.json(books);
+    */
+
+    Book.find({})
+    	.then(docs => res.json(docs))
+    	.catch(error => res.json(error));
 }
 
 exports.postNewBook = function (req, res){
     const title = req.body.title;
     //response will contain new book object including atleast _id and title
-
-    /* stub
-    const book = { '_id': '0123456789', title};
-
-    res.json(book);
-    */
 
     const book = new Book({ title });
 
