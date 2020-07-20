@@ -14,10 +14,17 @@ exports.postNewBook = function (req, res){
     const title = req.body.title;
     //response will contain new book object including atleast _id and title
 
-    //stub
+    /* stub
     const book = { '_id': '0123456789', title};
 
     res.json(book);
+    */
+
+    const book = new Book({ title });
+
+    book.save()
+      .then( doc => res.json(doc))
+      .catch( err => res.json(err));
 }
 
 exports.deleteAllBooks = function (req, res){
