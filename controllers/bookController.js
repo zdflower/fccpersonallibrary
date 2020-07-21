@@ -30,7 +30,7 @@ exports.deleteAllBooks = function (req, res){
 	//if successful response will be 'complete delete successful'
 	Book.deleteMany({})
 	.then( () => res.send('complete delete successful'))
-	.catch(err => res.send(error.message));
+	.catch(err => res.send(err.message));
 }
 
 exports.getBook = async function (req, res){
@@ -79,7 +79,7 @@ exports.postNewCommentOnBook = function (req, res){
   Book.findByIdAndUpdate(bookid, 
     {
       $push: { comments : [ comment ] },
-      $inc: { comment_count : 1}
+      $inc: { commentcount : 1}
     }, {new:true}, (err, doc) => {
     if (err) res.status(500).json({"error": err.message})
     else if (doc) res.json(doc)
