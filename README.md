@@ -92,6 +92,12 @@ https://mongoosejs.com/docs/connections.html#error-handling
 
 [Mongoose Connecting to MongoDB](https://www.youtube.com/watch?v=JLwwQMU6Ru0)
 
+https://stackoverflow.com/questions/15621970/pushing-object-into-array-schema-in-mongoose
+
+https://medium.com/stackfame/how-to-push-or-pop-items-into-mongodb-document-array-via-mongoose-in-node-js-express-js-91b7bbd0d218
+
+https://kb.objectrocket.com/mongo-db/push-and-pop-in-mongoose-1200
+
 ## Respuesta al intento de crear un nuevo libro sin proveer título
 
 En la app de ejemplo de freecodecamp, en este caso, devuelve "missing title" como texto en el cuerpo de la respuesta.
