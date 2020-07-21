@@ -21,12 +21,12 @@ Example app from FCC: <https://fuzzy-mink.glitch.me/>
 - [x] I will see that the site is powered by 'PHP 4.2.0' even though it isn't as a security measure.
 - [x] I can **post** a <code>title</code> to /api/books to add a book and returned will be the object with the <code>title</code> and a unique <code>_id</code>.
 - [x] I can **get** /api/books to retrieve an array of all books containing <code>title</code>, <code>_id</code>, & <code>commentcount</code>.
-- I can **get** /api/books/{_id} to retrieve a single object of a book containing <code>title</code>, <code>_id</code>, & an array of <code>comments</code> (empty array if no comments present).
-- [] I can **post** a <code>comment</code> to /api/books/{_id} to add a comment to a book and returned will be the books object similar to **get** /api/books/{_id}.
-- [] I can **delete** /api/books/{_id} to delete a book from the collection. Returned will be 'delete successful' if successful.
-- [] If I try to request a book that doesn't exist I will get a 'no book exists' message.
-- [x] I can send a **delete** request to /api/books to delete all books in the database. Returned will be 'complete delete successful' if successful.
-- [] All 6 functional tests required are complete and passing.
+- [x] I can **get** /api/books/{_id} to retrieve a single object of a book containing <code>title</code>, <code>_id</code>, & an array of <code>comments</code> (empty array if no comments present).
+-[] I can **post** a <code>comment</code> to /api/books/{_id} to add a comment to a book and returned will be the books object similar to **get** /api/books/{_id}.
+-[] I can **delete** /api/books/{_id} to delete a book from the collection. Returned will be 'delete successful' if successful.
+-[] If I try to request a book that doesn't exist I will get a 'no book exists' message.
+-[x] I can send a **delete** request to /api/books to delete all books in the database. Returned will be 'complete delete successful' if successful.
+-[] All 6 functional tests required are complete and passing.
 
 # Observations and references:
 
@@ -34,7 +34,7 @@ Example app from FCC: <https://fuzzy-mink.glitch.me/>
 
 <https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching>
 
-<https://helmetjs.github.io/docs/nocache/> Dice que ya no se va a incluir en una futura versión de helmet.
+<https://helmetjs.github.io/docs/nocache/> Ya no se va a incluir en una futura versión de helmet.
 
 <https://github.com/helmetjs/helmet/issues/215>
 
@@ -46,13 +46,13 @@ Example app from FCC: <https://fuzzy-mink.glitch.me/>
 
 You can use nocache Middleware to turn off caching.
 
-npm install --save nocache
+    npm install --save nocache
 
 Apply the middleware to your app
 
-const nocache = require('nocache');
-...
-app.use(nocache());
+    const nocache = require('nocache');
+    ...
+    app.use(nocache());
 
 This disables browser caching.
 
@@ -133,7 +133,7 @@ En mi código:
 
 En la app de freecodecamp: 
 
-no book exists
+    no book exists
 
 y el status code es 404.
 
