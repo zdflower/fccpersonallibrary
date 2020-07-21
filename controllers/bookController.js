@@ -88,15 +88,11 @@ exports.postNewCommentOnBook = function (req, res){
 }
 
 exports.deleteBook = function(req, res){
-/*
-function(req, res){
-      var bookid = req.params.id;
-      //if successful response will be 'delete successful'
+  const bookid = req.params.id;
+  //if successful response will be 'delete successful'
 
-      //stub
-      res.send('delete successful');
-    }
-*/
-
-	res.send('NO IMPLEMENTADO AÚN: DELETE un libro');
+  Book.findByIdAndDelete(bookid, (err) => {
+    if (err) res.status(500).send(err);
+    res.send('delete successful');
+  });
 }
