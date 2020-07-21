@@ -4,7 +4,11 @@ const MONGODB_CONNECTION_STRING = process.env.DB;
 try {
 
   mongoose.connect(MONGODB_CONNECTION_STRING, 
-  	{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+  	{ useNewUrlParser: true,
+      useCreateIndex: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false
+    });
   
   console.log('mongodb connected');
 

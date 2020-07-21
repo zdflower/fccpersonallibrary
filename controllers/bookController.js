@@ -72,27 +72,19 @@ exports.getBook = async function (req, res){
 }
 
 exports.postNewCommentOnBook = function (req, res){
-/*
-function(req, res){
-      var bookid = req.params.id;
-      var comment = req.body.comment;
-      //json res format same as .get
+  const bookid = req.params.id;
+  const comment = req.body.comment;
+  //json res format same as .get
 
-      //stub for addingCommentToBook <-- podría ir en una función aparte
-      const book = {"_id": bookid, "title": "book_title", "commentcount": 1, "comments": ["It's Ok"] };
-        try {
-          book.comments.push(comment);
-          book.commentcount++;
-          res.json(book);
-
-        } catch(err){
-          res.send("Bad things happen: " + err);
-        }
-      
-    }
-*/
-
-   res.send('NO IMPLEMENTADO AÚN: POST nuevo comentario a un libro');
+  Book.findByIdAndUpdate(bookid, 
+    {
+      $push: { comments : [ comment ] },
+      $inc: { comment_count : 1}
+    }, {new:true}, (err, doc) => {
+    if (err) res.status(500).json({"error": err.message})
+    else if (doc) res.json(doc)
+    else res.status(404).send('Not found')
+  });
 }
 
 exports.deleteBook = function(req, res){
