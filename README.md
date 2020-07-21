@@ -98,6 +98,8 @@ https://medium.com/stackfame/how-to-push-or-pop-items-into-mongodb-document-arra
 
 https://kb.objectrocket.com/mongo-db/push-and-pop-in-mongoose-1200
 
+https://stackoverflow.com/questions/8621948/using-inc-to-increment-a-document-property-with-mongoose
+
 ## Respuesta al intento de crear un nuevo libro sin proveer título
 
 En la app de ejemplo de freecodecamp, en este caso, devuelve "missing title" como texto en el cuerpo de la respuesta.
