@@ -117,11 +117,25 @@ En mi app:
 Tal vez tendría que procesar la respuesta de la base de datos y sólo devolver \_id, comments y title.
 
 
-## Respuesta a id inválida y de un id no existente para ver un libro (GET /api/books/{\_id})
+## Respuesta a id inválida para ver un libro (GET /api/books/{\_id})
 
 En la app de freecodecamp: 
 
-    Not found
+    Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+
+y el status code es 500.
+
+En mi código: 
+    
+    Mensaje de error y código 500
+
+## id no existente para ver un libro (GET /api/books/{\_id})
+
+En la app de freecodecamp: 
+
+no book exists
+
+y el status code es 404.
 
 ## Respuesta a id inválida para crear un nuevo comentario
 
@@ -129,8 +143,25 @@ En la app de freecodecamp:
 
     Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
 
+y el status code es 500.
+
 ## Respuesta a un id que no existe para crear un nuevo comentario
 
 En la app de freecodecamp:
 
+-si falta el comentario:
+
+    missing comment
+
+y el status code es 404
+
+-si no falta el comentario:
+
     null
+
+status code 200.
+    
+
+## try...catch y throw new Error(error_msg)
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Error
