@@ -114,19 +114,6 @@ En la app de ejemplo de freecodecamp devuelven algo como
 
     {"title":"La Ilíada","comments":[],"_id":"5f161aa3000e7d0073795d77"}
 
-En mi app: 
-
-    {
-    "__v": 0,
-    "_id": "5f161dbf6f31dc092f9f2b85",
-    "comment_count": 0,
-    "comments": [],
-    "title": "La Ilíada"
-    }
-
-Tal vez tendría que procesar la respuesta de la base de datos y sólo devolver \_id, comments y title.
-
-
 ## Respuesta a id inválida para ver un libro (GET /api/books/{\_id})
 
 En la app de freecodecamp: 
