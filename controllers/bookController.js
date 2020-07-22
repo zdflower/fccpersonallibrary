@@ -40,11 +40,12 @@ exports.getBook = async function (req, res){
     // Con await, tengo que poner async delante de la declaración de la función más arriba.
 
     try {
-    	const doc = await Book.findById(bookid).exec(); // si no encuentra el doc, devuelve null
-    	if(!doc){ res.status(404).send('Book not found')}
-    	else{res.json(doc);}
+    	const doc = await Book.findById(bookid, '_id title comments').exec(); // si no encuentra el doc, devuelve null
+    	// filtra el resultado para que sólo devuelva _id, title y comments
+      if(!doc){res.status(404).send('Book not found')}
+    	else {res.json(doc)}
     } catch (err) {
-    	res.status(500).json({"error": err.message}); // ¿Está bien que devuelva este código 500?
+    	res.status(500).json({"error": err.message});
     }
 
     
