@@ -1,14 +1,13 @@
+// TO DO:
+// Que en todas las respuestas donde devuelve un doc que filtre _id, title y comments.
+// Salvo en getAllBooks, ahí tiene que incluir commentcount, _id, y title, y excluir todo lo demás.
+
 const Book = require('../models/book');
 
 
 exports.getAllBooks = function (req, res) {
   	//response will be array of book objects
     //json res format: [{"_id": bookid, "title": book_title, "commentcount": num_of_comments },...]
-
-    /* stub
-    const books = [{"_id": "1234", "title": "book_title", "commentcount": 1, "comments": ["It's Ok"] }];
-    res.json(books);
-    */
 
     Book.find({})
     	.then(docs => res.json(docs))
@@ -37,8 +36,6 @@ exports.getBook = async function (req, res){
     const bookid = req.params.id;
     //json res format: {"_id": bookid, "title": book_title, "comments": [comment,comment,...]}
 
-    // Con await, tengo que poner async delante de la declaración de la función más arriba.
-
     try {
     	const doc = await Book.findById(bookid, '_id title comments').exec(); // si no encuentra el doc, devuelve null
     	// filtra el resultado para que sólo devuelva _id, title y comments
@@ -47,29 +44,6 @@ exports.getBook = async function (req, res){
     } catch (err) {
     	res.status(500).json({"error": err.message});
     }
-
-    
-	// Con un callback:
-/*
-	 Book.findById(bookid, (err, doc) => {
-		if (err) res.json({"error": err.message})
-		else if (doc) res.json(doc)
-		else res.status(404).send('Not found')
-	 })
-*/
-
-    // con then y catch
-/*
-    Book.findById(bookid).exec()
-    .then(doc => { 
-    	if (doc) {res.json(doc);}
-    	else {res.status(404).send('Not found');}
-    })
-    .catch(err => res.json({"error": err.message}));
-*/
-
-// Parece que funciona de las tres maneras
-    
 }
 
 exports.postNewCommentOnBook = function (req, res){
