@@ -26,7 +26,7 @@ Example app from FCC: <https://fuzzy-mink.glitch.me/>
 - [x] I can **delete** /api/books/{_id} to delete a book from the collection. Returned will be 'delete successful' if successful.
 - [x] If I try to request a book that doesn't exist I will get a 'no book exists' message.
 - [x] I can send a **delete** request to /api/books to delete all books in the database. Returned will be 'complete delete successful' if successful.
-- [] All 6 functional tests required are complete and passing.
+- [x] All 6 functional tests required are complete and passing.
 
 # Observations and references:
 
@@ -175,3 +175,43 @@ status code 200.
 ## try...catch y throw new Error(error_msg)
 
 https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Error
+
+## Callback, Promise, async/await
+
+Tres alternativas para el mismo método manejador de pedido get en la ruta /api/books/\{id\}:
+
+Con un callback:
+
+     Book.findById(bookid, (err, doc) => {
+        if (err) res.json({"error": err.message})
+        else if (doc) res.json(doc)
+        else res.status(404).send('Not found')
+     })
+
+
+Con then y catch
+
+    Book.findById(bookid).exec()
+    .then(doc => { 
+        if (doc) {res.json(doc);}
+        else {res.status(404).send('Not found');}
+    })
+    .catch(err => res.json({"error": err.message}));
+
+
+Con async...await
+
+    async function (req, res) {
+      const bookid = req.params.id;
+      try {
+        const doc = await Book.findById(bookid, '_id title comments').exec();
+        if (!doc) { res.status(404).send('Book not found') }
+        else { res.json(doc) }
+      } catch (err) {
+        res.status(500).json({"error": err.message});
+      }
+    }
+
+    
+
+
