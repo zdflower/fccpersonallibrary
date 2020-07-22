@@ -54,7 +54,7 @@ exports.postNewCommentOnBook = function (req, res){
     {
       $push: { comments : [ comment ] },
       $inc: { commentcount : 1}
-    }, {new:true}, (err, doc) => {
+    }, {new:true, select: '_id title comments'}, (err, doc) => {
     if (err) res.status(500).json({"error": err.message})
     else if (doc) res.json(doc)
     else res.status(404).send('Not found')
