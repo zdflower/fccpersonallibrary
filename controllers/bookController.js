@@ -1,6 +1,5 @@
 // TO DO:
 // Que en todas las respuestas donde devuelve un doc que filtre _id, title y comments.
-// Salvo en getAllBooks, ahí tiene que incluir commentcount, _id, y title, y excluir todo lo demás.
 
 const Book = require('../models/book');
 
@@ -9,7 +8,7 @@ exports.getAllBooks = function (req, res) {
   	//response will be array of book objects
     //json res format: [{"_id": bookid, "title": book_title, "commentcount": num_of_comments },...]
 
-    Book.find({})
+    Book.find({}, '_id title commentcount')
     	.then(docs => res.json(docs))
     	.catch(error => res.json(error));
 }
