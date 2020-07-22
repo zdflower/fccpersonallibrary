@@ -88,11 +88,26 @@ suite('Functional Tests', function() {
     suite('GET /api/books/[id] => book object with [id]', function(){
       
       test('Test GET /api/books/[id] with id not in db',  function(done){
-        //done();
+        chai.request(server)
+          .get('/api/books/5f1761e190d7dd0c5f37c659')
+          .end(function(err, res){
+            assert.equal(res.status, 404);
+            assert.equal(res.text, 'Book not found')
+            done();
+          });
+        
       });
       
       test('Test GET /api/books/[id] with valid id in db',  function(done){
-        //done();
+        chai.request(server)
+          .get('/api/books/5f1761d790d7dd0c5f37c258')
+          .end(function(err, res){
+            assert.equal(res.status, 200);
+            assert.equal(res.body._id, "5f1761d790d7dd0c5f37c258");
+            assert.equal(res.body.title, "La Odisea");
+            assert.property(res.body, "comments");
+            done();
+          });
       });
       
     });
@@ -100,8 +115,17 @@ suite('Functional Tests', function() {
 
     suite('POST /api/books/[id] => add comment/expect book object with id', function(){
       
-      test('Test POST /api/books/[id] with comment', function(done){
-        //done();
+      test('Test POST /api/books/[id] with comment', function(done){        
+        chai.request(server)
+          .post('/api/books/5f1761d790d7dd0c5f37c258')
+          .send({comment : "Gran aventura"})
+          .end(function(err, res){
+            assert.equal(res.status, 200);
+            assert.equal(res.body._id, "5f1761d790d7dd0c5f37c258");
+            assert.equal(res.body.title, "La Odisea");
+            assert.include(res.body.comments, "Gran aventura");
+            done();
+           })
       });
       
     });
