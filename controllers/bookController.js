@@ -20,7 +20,11 @@ exports.postNewBook = function (req, res){
     const book = new Book({ title });
 
     book.save()
-      .then( doc => res.json(doc))
+      .then( doc => res.json(
+        {'title' : doc.title,
+         '_id' : doc._id,
+         'comments': doc.comments
+        }))
       .catch( err => res.json(err));
 }
 
