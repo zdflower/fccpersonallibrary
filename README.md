@@ -22,11 +22,11 @@ Example app from FCC: <https://fuzzy-mink.glitch.me/>
 - [x] I can **post** a <code>title</code> to /api/books to add a book and returned will be the object with the <code>title</code> and a unique <code>_id</code>.
 - [x] I can **get** /api/books to retrieve an array of all books containing <code>title</code>, <code>_id</code>, & <code>commentcount</code>.
 - [x] I can **get** /api/books/{_id} to retrieve a single object of a book containing <code>title</code>, <code>_id</code>, & an array of <code>comments</code> (empty array if no comments present).
--[] I can **post** a <code>comment</code> to /api/books/{_id} to add a comment to a book and returned will be the books object similar to **get** /api/books/{_id}.
--[] I can **delete** /api/books/{_id} to delete a book from the collection. Returned will be 'delete successful' if successful.
--[] If I try to request a book that doesn't exist I will get a 'no book exists' message.
--[x] I can send a **delete** request to /api/books to delete all books in the database. Returned will be 'complete delete successful' if successful.
--[] All 6 functional tests required are complete and passing.
+- [x] I can **post** a <code>comment</code> to /api/books/{_id} to add a comment to a book and returned will be the books object similar to **get** /api/books/{_id}.
+- [x] I can **delete** /api/books/{_id} to delete a book from the collection. Returned will be 'delete successful' if successful.
+- [x] If I try to request a book that doesn't exist I will get a 'no book exists' message.
+- [x] I can send a **delete** request to /api/books to delete all books in the database. Returned will be 'complete delete successful' if successful.
+- [] All 6 functional tests required are complete and passing.
 
 # Observations and references:
 
@@ -99,6 +99,8 @@ https://medium.com/stackfame/how-to-push-or-pop-items-into-mongodb-document-arra
 https://kb.objectrocket.com/mongo-db/push-and-pop-in-mongoose-1200
 
 https://stackoverflow.com/questions/8621948/using-inc-to-increment-a-document-property-with-mongoose
+
+https://kb.objectrocket.com/mongo-db/how-to-find-documents-with-mongoose-233
 
 ## Respuesta al intento de crear un nuevo libro sin proveer título
 
