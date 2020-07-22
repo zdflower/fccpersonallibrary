@@ -5,7 +5,7 @@ const { check, validationResult } = require('express-validator');
 exports.validateBook = [
 	check('title')
 		.not().isEmpty().withMessage('missing title')
-		.isLength({min: 2,max: 50}).withMessage('Title too short or too long')
+		.isLength({min: 2,max: 50}).withMessage('1 < Title length < 51')
     	.trim()
     	.escape(),
 	(req, res, next) => {
