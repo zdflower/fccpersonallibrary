@@ -17,22 +17,11 @@ exports.validateBook = [
 	}
 ];
 
-/*
-exports.validateId = [
-	check('_id')
-	.isMongoId().withMessage('Not isMongoId')
-	.trim(),
-	(req, res, next) => {
-		const errors = validationResult(req);
-		if (!errors.isEmpty()) {
-			return res.status(422).json({ errors: errors.array() });
-		}
-	}
-];
-*/
 
 /*
 	https://express-validator.github.io/docs/index.html
+	
+	How to implement validation in a separate file using express validator:
 	https://stackoverflow.com/a/61268141
 */
 
